@@ -1,13 +1,10 @@
 """
-Intent Parser — Gemini implementation
+Intent Parser
 --------------------------------------
 Converts NL user input → ParsedIntent using Gemini Flash Lite (text-only).
 
-Key design vs. original
------------------------
-* Single model call — same role as the original IntentParserAgent.
 * Existing-intent serialised as clean JSON (not Python repr).
-* Merge rule is part of the schema description, not the prompt body.
+* Merge rule is part of the schema description
 * Handles Hinglish, regional language item names, and Indian cooking conventions.
 """
 

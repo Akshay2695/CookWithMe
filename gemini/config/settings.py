@@ -1,10 +1,3 @@
-"""
-Gemini implementation — Configuration
---------------------------------------
-Reads from .env in the project root.  All settings specific to the Gemini
-migration live here; the original config/settings.py is untouched.
-"""
-
 import os
 from pathlib import Path
 from pydantic_settings import BaseSettings

@@ -1,7 +1,7 @@
 """
 Substitution Agent — Gemini implementation
 -------------------------------------------
-Finds a substitute for an unavailable item (text-only, ~100 tokens).
+Finds a substitute for an unavailable item.
 """
 
 from __future__ import annotations

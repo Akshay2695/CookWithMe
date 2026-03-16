@@ -1,27 +1,3 @@
-"""
-Fused Vision Agent — Gemini implementation
--------------------------------------------
-Makes a single, rich vision call per item at the decision point where the
-LLM is genuinely needed: after search results load and we must pick a
-product + plan the add-to-cart action.
-
-Architecture benefit
---------------------
-The original system made 5 separate vision calls per sub-action:
-  1. CartChecker  (is the item already in cart?)
-  2. StateEvaluator (anomaly detection)
-  3. OrchestratorAgent (next-action planner)
-  4. ProductSelectorAgent (best variant + combination plan)
-  5. VerifierAgent (did the action succeed?)
-
-This agent replaces all five with ONE call per item:
-  • Called only when DOM cannot determine what to do (search results page).
-  • All other state (cart badge, stepper, search bar) is read from the DOM
-    at zero LLM cost by the CoreLoop.
-  • Returns: page_state + selected_product + combination_plan + action +
-    quantity_reasoning + confidence.
-"""
-
 from __future__ import annotations
 
 from typing import Literal, Optional

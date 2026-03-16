@@ -4,13 +4,6 @@ Multi-Platform Runner — Gemini implementation
 Runs CoreLoop instances for multiple grocery platforms in parallel and
 produces a structured comparison with fee estimates and a recommendation.
 
-Usage (from gemini/tests/test_chat.py or elsewhere):
-    from gemini.core.multi_platform import MultiPlatformRunner
-    comparison = await MultiPlatformRunner().run(
-        platforms=["blinkit", "zepto"],
-        session=chat_session,
-        extras=context_extras,
-    )
 """
 
 from __future__ import annotations

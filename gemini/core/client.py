@@ -1,14 +1,3 @@
-"""
-Gemini API Client with rate limiting.
-
-Limits: 15 RPM / 250k TPM.
-Design principles:
-  - Async wrapper around the synchronous google-genai SDK
-  - Token-bucket rate limiter enforces RPM and TPM budgets
-  - Optional screenshot compression (disabled by default; available for bandwidth saving)
-    - Structured JSON output via response_schema (Pydantic-native)
-"""
-
 from __future__ import annotations
 
 import asyncio

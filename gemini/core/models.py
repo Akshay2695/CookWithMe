@@ -1,8 +1,3 @@
-"""
-Shared Pydantic models for the Gemini implementation.
-These mirror core/models.py from the original codebase but are self-contained.
-"""
-
 from __future__ import annotations
 
 import uuid

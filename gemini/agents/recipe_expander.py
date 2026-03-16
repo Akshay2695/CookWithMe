@@ -1,7 +1,7 @@
 """
-Recipe Expander — Gemini implementation
+Recipe Expander
 -----------------------------------------
-Recipe name → ShoppingItem list (text-only call).
+Recipe name → ShoppingItem list .
 
 Batching: multiple recipes can be expanded in ONE call to save RPM quota.
 """

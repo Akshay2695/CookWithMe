@@ -1,10 +1,3 @@
-"""
-Browser Manager — Gemini implementation
------------------------------------------
-Identical in behaviour to core/browser.py from the original codebase.
-Imports are self-contained so it works inside the gemini/ package.
-"""
-
 from __future__ import annotations
 
 import asyncio

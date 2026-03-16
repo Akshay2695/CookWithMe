@@ -1,13 +1,3 @@
-"""
-Chat Session — Gemini implementation
---------------------------------------
-Conversational state machine identical to the original chat_session.py
-but using the Gemini-backed IntentParserAgent and RecipeExpanderAgent.
-
-State machine:
-  IDLE → [PREFERENCE_SETUP →] CLARIFYING → CONFIRMING → EXECUTING → DONE
-"""
-
 from __future__ import annotations
 
 import time
