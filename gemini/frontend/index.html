@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>CookWithMe — AI Grocery Assistant</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/frontend/app.css">
+</head>
+<body>
+
+<!-- Accounts Modal -->
+<div class="overlay hidden" id="acctModal" onclick="if(event.target===this)closeAcctModal()">
+  <div class="acct-modal" id="acctModalInner"></div>
+</div>
+
+<!-- API Key Modal -->
+<div class="overlay" id="keyModal">
+  <div class="modal">
+    <h2>🔑 Gemini API Key</h2>
+    <p>Your key is sent to the local agent only — never stored on any server.<br>
+       Get a free key at <a href="https://aistudio.google.com" target="_blank">aistudio.google.com</a></p>
+    <input class="minput" id="apiKeyInput" type="password" placeholder="AIza..."
+           autocomplete="off" onkeydown="if(event.key==='Enter') doSubmitKey()" />
+    <div class="mbtns">
+      <button class="btn btn-yes" onclick="doSubmitKey()">Start Cooking 🍳</button>
+    </div>
+    <div class="mskip" onclick="doSkipKey()">Use server&#39;s key instead</div>
+  </div>
+</div>
+
+<!-- App -->
+<div class="app">
+
+  <header class="header">
+    <div class="logo">
+      <span class="logo-icon">🍳</span>
+      <div>
+        <div class="logo-name">CookWithMe</div>
+        <div class="logo-sub">AI Grocery Assistant · Powered by Gemini</div>
+      </div>
+    </div>
+    <div class="header-sep"></div>
+    <div class="plat-indicators" id="platIndicators">
+      <span class="plat-ind"><span class="pdot" id="pi-blinkit"></span>Blinkit</span>
+      <span class="plat-ind"><span class="pdot" id="pi-zepto"></span>Zepto</span>
+    </div>
+    <div class="status-row" style="margin-left:12px">
+      <div class="dot" id="dot"></div>
+      <span id="statusTxt">Connecting&#8230;</span>
+    </div>
+    <button class="hbtn" onclick="showConnectionCard()" style="margin-left:8px">&#128279; Accounts</button>
+    <button class="hbtn" onclick="doRestart()" style="margin-left:4px">&#8634; Restart</button>
+  </header>
+
+  <section class="browser-panel">
+    <div class="blabel" id="blabel"><div class="blabel-dot"></div>Live Browser</div>
+    <div class="bplaceholder" id="bph">
+      <div class="bico">🖥️</div>
+      <p>Live browser feed appears here</p>
+      <p style="font-size:11px;margin-top:4px">Shopping automation starts when you confirm items</p>
+    </div>
+    <img id="browserView" class="hidden" alt="live browser" />
+  </section>
+
+  <section class="chat-panel">
+    <div class="chat-header">
+      <div class="chat-h-title">Shopping Assistant</div>
+      <div class="chat-h-sub" id="chatSub">Tell me what you want to cook or buy</div>
+    </div>
+    <div class="messages" id="msgs"></div>
+    <div class="input-area">
+      <div class="irow">
+        <textarea class="ibox" id="ibox" rows="1"
+          placeholder="e.g. Make butter chicken for 4 people…"
+          onkeydown="onKey(event)" oninput="resize(this)"></textarea>
+        <button class="isend" onclick="sendMsg()">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+               stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="22" y1="2" x2="11" y2="13"/>
+            <polygon points="22 2 15 22 11 13 2 9 22 2"/>
+          </svg>
+        </button>
+      </div>
+      <div class="ihint" id="ihint">Enter to send · Shift+Enter for new line</div>
+    </div>
+  </section>
+
+</div>
+
+<script src="/frontend/app.js" defer></script>
+</body>
+</html>

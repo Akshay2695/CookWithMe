@@ -1,0 +1,48 @@
+# ── Python artefacts ──────────────────────────────────────────────────────────
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.egg-info/
+dist/
+build/
+.eggs/
+
+# ── Virtual environment ───────────────────────────────────────────────────────
+venv/
+.venv/
+env/
+
+# ── Dev/test files ────────────────────────────────────────────────────────────
+# Legacy OpenAI-based agents (replaced by gemini/)
+agents/
+# Legacy core / config (replaced by gemini/core/ and gemini/config/)
+core/
+config/
+tests/
+docs/
+
+# ── Runtime generated dirs (written at run time; not needed in image) ─────────
+sessions/
+screenshots/
+
+# ── Local env / secrets ───────────────────────────────────────────────────────
+.env
+*.env
+
+# ── Editor / OS noise ─────────────────────────────────────────────────────────
+.DS_Store
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# ── Test artefacts ────────────────────────────────────────────────────────────
+gemini/tests/
+.pytest_cache/
+htmlcov/
+.coverage
+
+# ── Git ───────────────────────────────────────────────────────────────────────
+.git/
+.gitignore

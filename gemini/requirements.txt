@@ -1,0 +1,18 @@
+# Gemini implementation requirements
+# Install with: pip install -r gemini/requirements.txt
+
+# Google Gen AI SDK
+google-genai>=0.8.0
+
+# Browser automation
+playwright>=1.40.0
+
+# Data models & validation
+pydantic>=2.0.0
+pydantic-settings>=2.0.0
+
+# Screenshot compression (for token-efficient vision calls)
+Pillow>=10.0.0
+
+# Structured logging
+structlog>=23.0.0
